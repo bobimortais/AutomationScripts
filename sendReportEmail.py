@@ -21,4 +21,4 @@ while True:
 	msg['To'] = 'testtest@hotmail.com'
 	server.send_message(msg)
 	server.quit()
-  	time.sleep(1800)
+	time.sleep(1800)
