@@ -5,9 +5,7 @@ from email.message import EmailMessage
 from datetime import datetime
 import time
 
-i = 0
-
-while i == 0:
+while True:
 	server = smtplib.SMTP('smtp.live.com', 587)
 	server.starttls()
 	server.login('testtest@hotmail.com', 'xxxxxxxxxxxxx')
@@ -23,4 +21,4 @@ while i == 0:
 	msg['To'] = 'testtest@hotmail.com'
 	server.send_message(msg)
 	server.quit()
-  time.sleep(1800)
+	time.sleep(1800)
