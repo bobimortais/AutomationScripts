@@ -3,7 +3,7 @@ uniqueWords = []
 alreadyDuplicated = []
 
 for line in data:
-	//First of all, I would replace every ponctuation or space with ; to make it easier
+	#First of all, I would replace every ponctuation or space with ; to make it easier
 	line = line.replace('\n','')
 	words = line.split(';')
 	for word in words:
