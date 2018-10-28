@@ -1,17 +1,27 @@
-data = open('book.txt')
+import time
+
+data = open('book.txt', encoding='utf-8')
 uniqueWords = []
 alreadyDuplicated = []
 
+print('Init time: ' + time.ctime())
+
 for line in data:
-	#First of all, I would replace every ponctuation or space with ; to make it easier
 	line = line.replace('\n','')
 	words = line.split(';')
 	for word in words:
-		if word not in uniqueWords and word not in alreadyDuplicated:
-			uniqueWords.append(word)
-		elif word not in alreadyDuplicated:
-			uniqueWords.remove(word)
-			alreadyDuplicated.append(word)
+		try:
+			word = word.upper()
+			if word not in uniqueWords and word not in alreadyDuplicated:
+				uniqueWords.append(word)
+			elif word not in alreadyDuplicated:
+				uniqueWords.remove(word)
+				alreadyDuplicated.append(word)
+		except:
+			print('Error on deconding word')
 			
 print(uniqueWords)
-print(alreadyDuplicated)
+print('Unique words: ' + str(len(uniqueWords)))
+print('Non unique words: ' + str(len(alreadyDuplicated)))
+
+print('End time: ' + time.ctime())
