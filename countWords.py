@@ -1,6 +1,7 @@
 import time
 
-data = open('book.txt', encoding='utf-8')
+filePath = input('Type the full file path: ')
+data = open(filePath, encoding='utf-8')
 uniqueWords = []
 alreadyDuplicated = []
 
