@@ -8,7 +8,7 @@ import time
 while True:
 	server = smtplib.SMTP('smtp.live.com', 587)
 	server.starttls()
-	server.login('testtest@hotmail.com', 'xxxxxxxxxxxxx')
+	server.login('robsonzacarias@hotmail.com', 'UniverseHole13!')
 	msg = MIMEMultipart('alternative')
 	text = 'Trouble Tickets Report'
 	html = '<html><head></head><body><table><tr><th>Case ID</th><th>Description</th><th>Status</th></tr><tr><td>1</td><td>Broken Nose</td><td>Open</td></tr><tr><td>2</td><td>Car Crash</td><td>Closed</td></tr></table></body></html>'
@@ -17,8 +17,14 @@ while True:
 	msg.attach(part1)
 	msg.attach(part2)
 	msg['Subject'] = 'Trouble Tickets Report ' + datetime.now().strftime('%c')
-	msg['From'] = 'testtest@hotmail.com'
-	msg['To'] = 'testtest@hotmail.com'
-	server.send_message(msg)
+	msg['From'] = 'rola@hotmail.com'
+	msg['To'] = 'rola@hotmail.com'
+	
+	try:
+		server.send_message(msg)
+	except Exception as ex:
+		print('Exception occured')
+		print(ex)
+		
 	server.quit()
 	time.sleep(1800)
