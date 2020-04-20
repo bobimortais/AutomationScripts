@@ -8,7 +8,7 @@ import time
 while True:
 	server = smtplib.SMTP('smtp.live.com', 587)
 	server.starttls()
-	server.login('robsonzacarias@hotmail.com', 'UniverseHole13!')
+	server.login('<USER NAME>', <PASS>)
 	msg = MIMEMultipart('alternative')
 	text = 'Trouble Tickets Report'
 	html = '<html><head></head><body><table><tr><th>Case ID</th><th>Description</th><th>Status</th></tr><tr><td>1</td><td>Broken Nose</td><td>Open</td></tr><tr><td>2</td><td>Car Crash</td><td>Closed</td></tr></table></body></html>'
